@@ -4,19 +4,19 @@ import java.util.Random;
 
 public class Shop implements Runnable {
     AccountsDepartament accountsDepartament;
-    int[] account;
+    int[] cashDesks;
 
     public Shop(AccountsDepartament accountsDepartament) {
         this.accountsDepartament = accountsDepartament;
-        account = new Random()
+        cashDesks = new Random()
                 .ints(Main.MIN_VALUE, Main.MAX_VALUE)
-                .limit(Main.MAX_SIZE)
+                .limit(Main.NUMBER_OF_CASH_DESKS)
                 .toArray();
     }
 
     @Override
     public void run() {
-        for (int value : account) {
+        for (int value : cashDesks) {
             accountsDepartament.add(value);
         }
     }
