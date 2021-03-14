@@ -9,15 +9,15 @@ public class Shop implements Runnable {
     public Shop(AccountsDepartament accountsDepartament) {
         this.accountsDepartament = accountsDepartament;
         cashDesks = new Random()
-                .ints(Main.MIN_VALUE, Main.MAX_VALUE)
+                .ints(Main.MIN_CASH_DESK_REVENUE, Main.MAX_CASH_DESK_REVENUE)
                 .limit(Main.NUMBER_OF_CASH_DESKS)
                 .toArray();
     }
 
     @Override
     public void run() {
-        for (int value : cashDesks) {
-            accountsDepartament.add(value);
+        for (int cashDeskRevenue : cashDesks) {
+            accountsDepartament.add(cashDeskRevenue);
         }
     }
 }
