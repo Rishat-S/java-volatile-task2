@@ -16,8 +16,8 @@ public class Shop implements Runnable {
 
     @Override
     public void run() {
-        for (int i : account) {
-            accountsDepartament.add(i);
+        for (int value : account) {
+            accountsDepartament.add(value);
         }
     }
 }
